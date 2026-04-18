@@ -1,0 +1,369 @@
+/* 重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   
+    
+}
+
+/* 整體 */
+body {
+    font-family:'Noto Serif TC', sans-serif;
+    background: #1F3281;
+    display: flex;
+    flex-direction: column; /* 🔥 直向排列 */
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column; /* 上下排列 */
+    min-height: 100vh;
+    margin: 25px;
+    border: 3px solid #87BFFF; /* 🔥 框線放這 */
+}
+
+/* 版面 */
+.container {
+    display: flex;
+    flex: 1;
+}
+
+header{
+    text-align: center;
+    background-color: #1E255B;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: white;
+}
+
+a{
+    text-decoration: none
+}
+
+
+/* 左側 */
+.sidebar { 
+    width: 30%;
+    background-color:#87BFFF;
+    color: black;
+    padding: 20px;
+    text-align: center;
+    word-break: break-all;
+
+}
+
+.sidebar, .main-content {
+    
+    display: flex;
+    flex-direction: column;
+}
+
+.abouttxt{
+    color: black;
+    border-width: 5px;
+    border-color: #ADD7F6;
+    border-style: double; 
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 30px;
+    margin-right: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.about p {
+    text-align: left;
+    padding-left: 29px ;
+    padding-right: 27px;
+}
+
+.profile{
+    padding-top: 30px;
+}
+
+.skills{
+    padding-top: 10px;
+}
+
+/* 右側 */
+.main-content {
+    width: 70%;
+    color: #FFF7F8;
+    padding: 40px;
+    position: relative;
+}
+
+
+
+/* 區塊 */
+section {
+    margin-bottom: 40px;
+}
+
+.experience{
+    text-align: center;
+}
+
+.item{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+/* 橫向排列 */
+.img-row {
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* 👉 間距加大（你可以改 60px、80px） */
+}
+
+/* 每一組（圖片+文字） */
+.img-box {
+    display: flex;
+    flex-direction: column; /* 👉 讓文字在下面 */
+    align-items: center;   /* 👉 置中 */
+}
+
+/* 圖片美化 */
+.img-box img {
+    padding-top: 15px;
+}
+
+/* 文字 */
+.img-box p {
+    margin-top: 10px;
+    text-align: center;
+
+}
+
+.item a img {
+    transition: 0.3s;
+}
+
+.item a img:hover {
+    transform: scale(1.2);
+}
+
+
+
+/* 外層排列 */
+.skills {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 45px;
+    padding-top: 25px;
+}
+
+.circle {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    /* 初始：0% */
+    background: conic-gradient(#6ea9e4 0deg, #e0e0e0 0deg);
+
+    animation: load 0s ease-out forwards;
+    transition: all 0.3s ease;
+}
+
+/* 🔥 滑鼠移上去發光 */
+.circle:hover {
+    transform: scale(1.05);
+
+    box-shadow: 
+        0 0 10px rgba(163, 207, 255, 0.951),
+        0 0 20px rgba(99, 169, 244, 0.951),
+        0 0 40px rgba(38, 137, 243, 0.951);
+}
+
+.circle::after {
+    content: "";
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+
+    opacity: 0;
+    transition: 0.3s;
+
+    box-shadow: 0 0 30px rgb(146, 195, 235);
+}
+
+.circle:hover::after {
+    opacity: 1;
+}
+
+/* 中間挖空 */
+.circle::before {
+    content: "";
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background: #87BFFF;
+    border-radius: 50%;
+}
+
+/* 文字 */
+.circle span {
+    position: relative;
+    font-weight: bold;
+}
+
+/* 🔥 關鍵動畫 */
+@keyframes load {
+    from {
+        background: conic-gradient(#1F3FA7 0deg, #e0e0e0 0deg);
+    }
+    to {
+        background: conic-gradient(
+            #1F3FA7 calc(var(--percent) * 3.6deg),
+            #ADD7F6 0deg
+        );
+    }
+}
+
+.hobby_title{
+    padding-top: 30px;
+    text-align: center;
+}
+
+.hobby_txt{
+    text-align: left;
+    padding-left: 100px;
+    padding-right: 50px;
+}
+
+.hobby_txt li{
+    padding-top: 15px;
+}
+
+.hobby_txt p{
+    padding-top: 5px;
+}
+
+/* footer */
+footer {
+    text-align: center;
+    padding: 25px 10px;
+    background-color: #2A59C3;
+    display: inline-block;
+}
+.contact {
+    display: flex;
+    justify-content: center;  /* 置中 */
+    align-items: center;      /* 垂直置中 */
+    gap: 30px;                /* 間距 */
+    flex-wrap: wrap;          /* 手機不爆版（很重要） */
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* 👉 間距加大（你可以改 60px、80px） */
+}
+
+.contact a img {
+    transition: 0.3s;
+}
+
+.contact a img:hover {
+    transform: scale(1.2);
+}
+
+/* 🌫️ 外框玻璃感 */
+.lau {
+    width: 100%;
+    padding: 30px 20px;
+    backdrop-filter: blur(10px);
+    background: #ADD7F6;
+    border-radius: 16px;
+}
+
+.lau.h2{
+    padding-bottom: 25px;
+    padding-top: 10px;
+}
+
+/* 每一列 */
+.skill-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-top: 15px;
+    padding-bottom: 10px;
+}
+
+/* 左右文字 */
+.skill-name {
+    width: 60px;
+    flex-shrink: 0;
+}
+
+.skill-val {
+    width: 50px;
+    flex-shrink: 0;
+    text-align: right;
+}
+
+/* 進度條底 */
+.skill-track {
+    flex: 1;
+    min-width: 0;
+    height: 12px;
+    background:white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* ⭐ 進度條本體 */
+.skill-bar {
+    height: 100%;
+    width: var(--val);  /* 一開始就有值 */
+    border-radius: 10px;
+
+    /* 漸層 + 玻璃感 */
+    background: linear-gradient(
+        120deg,
+        #87BFFF,
+        #3F8EFC
+    );
+
+    box-shadow: 0 0 20px rgb(200, 225, 255);
+
+    transition: width 0.6s ease;
+}
+
+/* ✨ hover 時「重新觸發動畫」 */
+.skill-row:hover .skill-bar {
+    animation: fillAgain 0.6s ease;
+    box-shadow: 0 0 15px rgba(44, 136, 255, 0.9);
+}
+
+/* ⭐ 不會壞掉的動畫 */
+@keyframes fillAgain {
+    from {
+        width: 0;
+    }
+    to {
+        width: var(--val);
+    }
+}
+
+@media  screen and (max-width:800px) {
+    article,aside{
+        float: none;
+        width: 100%;
+    }
+}
