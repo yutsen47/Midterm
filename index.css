@@ -18,6 +18,15 @@ body {
     flex-direction: column;
 }
 
+nav{
+    background-color: #1F3FA7;
+    color: white;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    
+}
+
 .wrapper {
     display: flex;
     flex-direction: column;
