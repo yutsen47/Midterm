@@ -18,13 +18,31 @@ body {
     flex-direction: column;
 }
 
-nav{
-    background-color: #1F3FA7;
+nav {
+    background-color: #1F3FA7; 
+    background-size: 300% 300%;
+    background-image: linear-gradient(120deg,  #2A59C3, #3F8EFC, #7aaee9, #7ec9ff, #76e1ff );
+    animation: gradientShift 6s ease infinite;
     color: white;
-    text-align: center;
     padding-top: 10px;
     padding-bottom: 10px;
-    
+    overflow: hidden;
+    white-space: nowrap;
+}
+nav p{
+    display: inline-block;
+    animation: marquee 12s linear infinite;
+}
+
+@keyframes gradientShift {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes marquee {
+    from { transform: translateX(100vw); }
+    to   { transform: translateX(-100%); }
 }
 
 .wrapper {
@@ -43,12 +61,13 @@ nav{
 
 header {
     text-align: center;
-    background-color: #1E255B;
     padding-top: 20px;
     padding-bottom: 20px;
     color: white;
+    background-size: 300% 300%;
+    background-image: linear-gradient(135deg,  #1F3281, #1F3FA7, #2A59C3,#3F8EFC #1F3FA7, #1E255B);
+    animation: gradientShift 8s ease infinite;
 }
-
 a {
     text-decoration: none;
 }
